@@ -87,7 +87,6 @@ public class LinkedList {
 	}
 	
 	public static int removeMatched(int data){
-		int flag= 0;
 		ListNode p = head;
 		if(p.getData() == data ){
 			head =head.getNext();
@@ -144,7 +143,7 @@ public class LinkedList {
 			System.out.print(p.getData() + "-->");
 			p=p.getNext();
 		}
-		System.out.println();
+		System.out.println("NULL");
 	}
 		else{
 			System.out.println("Nothing to Display");
