@@ -87,7 +87,10 @@ public class LinkedList {
 	}
 	
 	public static int removeMatched(int data){
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 8e2701f939233666442a75ce80db86fe48f8c705
 		ListNode p = head;
 		if(p.getData() == data ){
 			head =head.getNext();
@@ -145,7 +148,10 @@ public class LinkedList {
 			p=p.getNext();
 		}
 		System.out.println("NULL");
+<<<<<<< HEAD
 		//System.out.println();
+=======
+>>>>>>> 8e2701f939233666442a75ce80db86fe48f8c705
 	}
 		else{
 			System.out.println("Nothing to Display");
