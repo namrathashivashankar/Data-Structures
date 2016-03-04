@@ -3,7 +3,7 @@ package linkedlist;
 public class CircularLinkedList {
 
 	CLLNode head;
-	static int length;
+	int length;
 	
 	public void insertBegin(int data){
 		CLLNode node =  new CLLNode(data);
