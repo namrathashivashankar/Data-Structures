@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DoublyLinkedList {
 	 DLLNode head;
-	 static int length;
+	 int length;
 	
 	public  void insertEnd(int data){
 		DLLNode node = new DLLNode(data);
