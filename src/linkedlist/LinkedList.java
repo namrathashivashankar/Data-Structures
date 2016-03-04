@@ -3,14 +3,14 @@ package linkedlist;
 import java.util.Scanner;
 
 public class LinkedList {
-	static ListNode head;
-	static int length;
+	ListNode head;
+	 int length;
 	
 	public ListNode getHead(){
 		return head;
 	}
 	
-	public static void insertBegin(ListNode node){
+	public  void insertBegin(ListNode node){
 		
 		if(head == null){
 			head = node;
@@ -22,7 +22,7 @@ public class LinkedList {
 		length++;
 	}
 	
-	public static void insertEnd(ListNode node){
+	public  void insertEnd(ListNode node){
 		if(head == null){
 			head = node;
 		}
@@ -35,7 +35,7 @@ public class LinkedList {
 		length++;
 	}
 	
-	public static void insertPos(ListNode node,int position){
+	public  void insertPos(ListNode node,int position){
 		
 		if(position < 0 ){
 			position = 0;
@@ -66,7 +66,7 @@ public class LinkedList {
 		
 	}
 	
-	public static void removeBegin(){
+	public  void removeBegin(){
 		if(head == null)
 			System.out.println("No Elements to Remove");
 		else{
@@ -75,7 +75,7 @@ public class LinkedList {
 		}
 	}
 	
-	public static void removeEnd(){
+	public  void removeEnd(){
 		if(head == null)
 			System.out.println("No Elements to Delete");
 		else{
@@ -86,11 +86,8 @@ public class LinkedList {
 		}
 	}
 	
-	public static int removeMatched(int data){
-<<<<<<< HEAD
-		
-=======
->>>>>>> 8e2701f939233666442a75ce80db86fe48f8c705
+	public  int removeMatched(int data){
+
 		ListNode p = head;
 		if(p.getData() == data ){
 			head =head.getNext();
@@ -112,7 +109,7 @@ public class LinkedList {
 		return 0;
 }
 	
-	public static void removePos(int position){
+	public  void removePos(int position){
 		
 		if(position < 0){
 			position = 0;
@@ -139,7 +136,7 @@ public class LinkedList {
 		length--;
 	}
 	
-	public static void display(){
+	public void display(){
 		ListNode p = head;
 		if(length>0){
 			System.out.println("List Elements are");
@@ -148,10 +145,9 @@ public class LinkedList {
 			p=p.getNext();
 		}
 		System.out.println("NULL");
-<<<<<<< HEAD
+
 		//System.out.println();
-=======
->>>>>>> 8e2701f939233666442a75ce80db86fe48f8c705
+
 	}
 		else{
 			System.out.println("Nothing to Display");
@@ -164,7 +160,8 @@ public class LinkedList {
 	}
 	
 	public static void main(String[] args){
-		
+	
+	LinkedList ll = new LinkedList();	
 	System.out.println("Enter the Number of elements to add at end of a Linked List");
 	Scanner in = new Scanner(System.in);
 	int n = in.nextInt();
@@ -175,9 +172,9 @@ public class LinkedList {
 		ip = new Scanner(System.in);
 		int d = ip.nextInt();
 		ListNode node = new ListNode(d);
-		insertEnd(node);
+		ll.insertEnd(node);
 		}
-	display();
+	ll.display();
 	
 	System.out.println("\nEnter the Elemnts to add at the begining");
 	
@@ -186,46 +183,46 @@ public class LinkedList {
 		ipb = new Scanner(System.in);
 		int d = ipb.nextInt();
 		ListNode node = new ListNode(d);
-		insertBegin(node);
+		ll.insertBegin(node);
 		}
-	display();
+	ll.display();
 	
-	removeBegin();
+	ll.removeBegin();
 	System.out.println("\nAfter removing the head");
-	display();
+	ll.display();
 	
-	removeEnd();
+	ll.removeEnd();
 	System.out.println("\nAfter removing the Tail");
-	display();
+	ll.display();
 	
 	ListNode no = new ListNode(20);
-	insertPos(no,2);
+	ll.insertPos(no,2);
 	System.out.println("\nAfter Inserting at pos 2");
-	display();
+	ll.display();
 	
-	removeMatched(20);
+	ll.removeMatched(20);
 	System.out.println("\nAfter removing 20 at pos 2");
-	display();
+	ll.display();
 	
-	removePos(-1);
+	ll.removePos(-1);
 	System.out.println("\nAfter removing element given pos -1");
-	display();
+	ll.display();
 	
-	removePos(20);
+	ll.removePos(20);
 	System.out.println("\nAfter removing element given pos 20");
-	display();
+	ll.display();
 	
-	removePos(2);
+	ll.removePos(2);
 	System.out.println("\nAfter removing element at pos 2");
-	display();
+	ll.display();
 	
 	System.out.println("Enter the Element to delete");
 	Scanner ele = new Scanner(System.in);
 	int element = ele.nextInt();
 	
-	if(removeMatched(element) == 1){
+	if(ll.removeMatched(element) == 1){
 	System.out.println("After removing element "+ element);
-	display();
+	ll.display();
 	}else{
 		System.out.println("Element Not Found");
 	}

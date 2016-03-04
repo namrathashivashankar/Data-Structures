@@ -3,10 +3,10 @@ package linkedlist;
 import java.util.Scanner;
 
 public class DoublyLinkedList {
-	static DLLNode head;
-	static int length;
+	 DLLNode head;
+	 static int length;
 	
-	public static void insertEnd(int data){
+	public  void insertEnd(int data){
 		DLLNode node = new DLLNode(data);
 		
 		if(head ==null){
@@ -23,7 +23,7 @@ public class DoublyLinkedList {
 		
 	}
 	
-	public static void insertBegin(int data){
+	public  void insertBegin(int data){
 		DLLNode node = new DLLNode(data);
 		
 		if(head == null){
@@ -36,7 +36,7 @@ public class DoublyLinkedList {
 		length++;
 	}
 	
-	public static void insertPos(int pos,int data){
+	public  void insertPos(int pos,int data){
 		if(pos < 0){
 			pos = 0;
 		}if(pos > length){
@@ -64,7 +64,7 @@ public class DoublyLinkedList {
 		
 	}
 	
-	public static void removeBegin(){
+	public  void removeBegin(){
 		if(length == 1){
 			System.out.println("Deleted " + head.getData() + ",No elements to delete");
 			head= null;
@@ -77,7 +77,7 @@ public class DoublyLinkedList {
 		}
 	}
 	
-	public static void removeEnd(){
+	public  void removeEnd(){
 		if(length == 1){
 			System.out.println("Deleted " + head.getData() + " ,No more elements to delete");
 			head = null;
@@ -94,7 +94,7 @@ public class DoublyLinkedList {
 		length--;
 	}
 }	
-	public static void removePos(int pos){
+	public  void removePos(int pos){
 		if(pos<=0){
 			removeBegin();
 		}else if(pos>=length){
@@ -113,7 +113,7 @@ public class DoublyLinkedList {
 		}
 	}
 	
-	public static int removeMatched(int data){
+	public  int removeMatched(int data){
 		DLLNode p = head;
 		while(p!=null){
 			if(p.getData()== data && p.getNext()!=null){
@@ -127,7 +127,7 @@ public class DoublyLinkedList {
 		return 0;
 	}
 	
-	public static void display(){
+	public void display(){
 		
 		DLLNode p = head;
 		if(head == null){
@@ -142,6 +142,7 @@ public class DoublyLinkedList {
 	}
 	
 	public static void main(String[] args){
+		DoublyLinkedList dl = new DoublyLinkedList();
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter the number of elements");
 		int n = in.nextInt();
@@ -151,48 +152,48 @@ public class DoublyLinkedList {
 		for(int i=0;i<n;i++){
 			inE= new Scanner(System.in);
 			int ele = inE.nextInt();
-			insertEnd(ele);
+			dl.insertEnd(ele);
 		}
-		display();
+		dl.display();
 		
 		System.out.println("Enter the elements to add at the Begining");
 		Scanner inB = null;
 		for(int i=0;i<n;i++){
 			inB= new Scanner(System.in);
 			int ele = inB.nextInt();
-			insertBegin(ele);
+			dl.insertBegin(ele);
 		}
-		display();
+		dl.display();
 		
 		System.out.println("\nEnter the position and data to insert");
 		Scanner ini = new Scanner(System.in);
 		int ipos = ini.nextInt();
 		Scanner ie = new Scanner(System.in);
 		int data = ie.nextInt();
-		insertPos(ipos,data);
+		dl.insertPos(ipos,data);
 		System.out.println("\nAfter inserting " + data + "at position" + ipos);
-		display();
+		dl.display();
 		
 		System.out.println("\nAfter Deleting the last Element from the list");
-		removeEnd();
-		display();
+		dl.removeEnd();
+		dl.display();
 		
 		System.out.println("\nAfter Deleting the first element from the list");
-		removeBegin();
-		display();
+		dl.removeBegin();
+		dl.display();
 		
 		System.out.println("\nEnter the position of the element to delete");
 		Scanner inr = new Scanner(System.in);
 		int pos = inr.nextInt();
-		removePos(pos);
-		display();
+		dl.removePos(pos);
+		dl.display();
 		
 		System.out.println("\nEnter the Element to Delete");
 		Scanner er = new Scanner(System.in);
 		int eler = er.nextInt();
-		removeMatched(eler);
+		dl.removeMatched(eler);
 		System.out.println("\nAfter deleting " + eler + " from the list");
-		display();
+		dl.display();
 		
 		in.close();
 		inB.close();
