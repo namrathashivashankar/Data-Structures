@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LinkedList {
 	ListNode head;
-	static int length;
+	int length;
 	
 	public ListNode getHead(){
 		return head;
